@@ -1,22 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Weather App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e2f;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #292c3e;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .weather-info {
+            margin-top: 25px;
+            background: #383c52;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .not-found {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>Weather Forecast 🌤️</h2>
-    <form method="POST">
-        <input type="text" name="city" placeholder="Enter city" required>
-        <button type="submit">Get Weather</button>
-    </form>
+    <div class="container">
+        <h1>🌦️ Weather App</h1>
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <br>
+            <button type="submit">Get Weather</button>
+        </form>
 
-    {% if weather == "not_found" %}
-        <p>City not found. Please check spelling.</p>
-    {% elif weather %}
-        <h3>Weather in {{ weather.city }}</h3>
-        <p>Temperature: {{ weather.temperature }}°C</p>
-        <p>Humidity: {{ weather.humidity }}%</p>
-        <p>Condition: {{ weather.description }}</p>
-    {% endif %}
+        {% if weather == "not_found" %}
+            <div class="not-found">City not found. Please check the spelling.</div>
+        {% elif weather %}
+            <div class="weather-info">
+                <h2>{{ weather.city }}</h2>
+                <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+                <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+                <p><strong>Condition:</strong> {{ weather.description }}</p>
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
