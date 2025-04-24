@@ -12,5 +12,5 @@ A simple weather forecast web application built using **Python Flask** and **Ope
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/weather-app-flask.git
+   git clone https://github.com/dj3385/weather-app-flask.git
    cd weather-app-flask
