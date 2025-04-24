@@ -7,8 +7,6 @@ A simple weather forecast web application built using **Python Flask** and **Ope
 - Uses OpenWeatherMap API
 - Clean and responsive frontend using Flask + HTML
 
-** Screenshot
-**![Weather App Screenshot](screenshot.png)  <!-- Optional -->
 
 #🔧 How to Run Locally
 
